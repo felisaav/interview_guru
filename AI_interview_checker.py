@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import PyPDF2  # Import PyPDF2 for PDF processing
+import PyPDF2 
 
 # Define a function to extract data from a PDF file
 def extract_data(uploaded_file):
