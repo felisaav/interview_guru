@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 #import fitz
 
+
 #def extract_data(uploaded_file):
     # Initialize a variable to store the extracted text
 #    pymupdf_text = ""
@@ -17,6 +18,6 @@ import pandas as pd
 #    return pymupdf_text
 
 uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
-if uploaded_file is not None:
-    df = extract_data(uploaded_file)
-    st.write(df)
+#if uploaded_file is not None:
+#    df = extract_data(uploaded_file)
+#    st.write(df)
