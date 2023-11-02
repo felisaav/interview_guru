@@ -1,2 +1,2 @@
 pandas
-PyMuPDF==1.18.11
+PyMuPDF
