@@ -7,7 +7,7 @@ def extract_data(uploaded_file):
     pymupdf_text = ""
 
     # Open the PDF file
-    pdf_document = fitz.open(path)
+    pdf_document = fitz.open(uploaded_file)
 
     # Iterate through each page and extract text
     for page_num in range(pdf_document.page_count):
