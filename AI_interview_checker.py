@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import fitz
-
+import PyMuPDF as fitz
 
 def extract_data(uploaded_file):
     # Initialize a variable to store the extracted text
