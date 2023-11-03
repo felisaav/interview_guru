@@ -44,7 +44,7 @@ if submit_code:
     
     #instructions
     instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum."
-    instr_2="Entregar justificación del score con las 5 principales fortalezas y 5 principales aspectos por mejorar"
+    instr_2="Entregar justificación del score con exactamente las 5 principales strengths y 5 principales weaknesses. No entregar más, no entregar menos"
     instr_3='''como output entregar la información con el siguiente formato: \
         data = {
             "score": {75},
@@ -77,12 +77,6 @@ if submit_code:
     )
     #numbers = np.array(response["choices"][0]["message"]["content"])
     result = response["choices"][0]["message"]["content"]#numbers[np.char.isnumeric(numbers)].astype(int)
-
-    #fig = go.Figure(go.Indicator(
-    #    mode = "gauge+number",
-    #    value = result,
-    #    domain = {'x': [0, 1], 'y': [0, 1]},
-    #    title = {'text': "Match Scoring"}))
+    df = pd.DataFrame(result)
     
-    #st.plotly_chart(fig)
-    st.text(result)
+    st.dataframe(df)
