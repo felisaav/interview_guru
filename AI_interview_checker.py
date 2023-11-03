@@ -5,6 +5,7 @@ import os
 import fitz  # PyMuPDF
 import numpy as np
 import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
 with st.form(key ='Form1'):
     uploaded_pdf = st.file_uploader("Load pdf: ", type=['pdf'])
@@ -56,11 +57,12 @@ if submit_code:
     numbers = np.array(response["choices"][0]["message"]["content"])
     result = numbers[np.char.isnumeric(numbers)].astype(int)
 
+    fig, ax = = plt.subplots()
     fig = go.Figure(go.Indicator(
         mode = "gauge+number",
         value = result,
         domain = {'x': [0, 1], 'y': [0, 1]},
         title = {'text': "Match Scoring"}))
 
-    st.plot(fig)
+    st.pyplot(fig)
     st.text(result)
