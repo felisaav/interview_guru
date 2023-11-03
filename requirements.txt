@@ -4,3 +4,4 @@ numpy
 openai
 PyMuPDFb
 PyMuPDF
+plotly.graph_objects
