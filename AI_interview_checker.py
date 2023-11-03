@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import openai
-#import os
+import os
 
 uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
 #if uploaded_file is not None:
