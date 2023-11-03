@@ -25,8 +25,8 @@ with st.form(key ='Form1'):
     #    st.write(df)
     #load position info
     
-    position_title=st.text_input('job position')
-    description=st.text_area('job description')
+    position_title=st.text_input('job position',help='Please record the title of the position you are interested in applying for.')
+    description=st.text_area('job description',help='Please record the job description of the position you are interested in applying for.')
     
     submit_code = st.form_submit_button(label ="Execute")
 
