@@ -78,8 +78,28 @@ if submit_code:
     )
     
     response_content = response["choices"][0]["message"]["content"]
-    result_data = json.loads(response_content)
-    df = pd.DataFrame(result_data)
+    data = json.loads(response_content)
     
-    st.dataframe(df)
+    #df = pd.DataFrame(result_data)
+    
+    #st.dataframe(df)
     #st.write(response_content)
+
+    #----------------------------
+    # Create a list of dictionaries in the desired format
+    concept_detail_value = []
+
+    # Add the "score" as the first entry
+    concept_detail_value.append({"Concept": "Score", "Detail": "Score", "Value": data["score"]})
+    
+    # Add the strengths and weaknesses
+    for category, category_data in data.items():
+        if category in ["strengths", "weaknesses"]:
+            for key, value in category_data.items():
+                concept_detail_value.append({"Concept": category.capitalize(), "Detail": key, "Value": value})
+    
+    # Create the DataFrame
+    df = pd.DataFrame(concept_detail_value)
+    
+    # Display the DataFrame
+    st.dataframe(df)
