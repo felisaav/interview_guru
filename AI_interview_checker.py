@@ -64,5 +64,5 @@ if submit_code:
         domain = {'x': [0, 1], 'y': [0, 1]},
         title = {'text': "Match Scoring"}))
 
-    st.pyplot(fig)
+    st.plotly_chart(fig)
     st.text(result)
