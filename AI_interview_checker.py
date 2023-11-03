@@ -45,7 +45,7 @@ if submit_code:
     #instructions
     instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum."
     instr_2="Entregar justificación del score con las 5 principales fortalezas y 5 principales aspectos por mejorar"
-    instr_3="como output entregar la información con el siguiente formato: \
+    instr_3='''como output entregar la información con el siguiente formato: \
         data = {
             "score": {75},
             "strengths": {
@@ -62,7 +62,8 @@ if submit_code:
                 "weakness_4": "Necesidad de mejorar la gestión del tiempo y la planificación.",
                 "weakness_5": "Enfrentar dificultades para hablar en público y presentar ideas de manera efectiva."
             }
-        }"
+        }
+    '''
     
     #prompt with a chat model
     response = openai.ChatCompletion.create(
