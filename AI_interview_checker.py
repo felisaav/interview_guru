@@ -102,11 +102,11 @@ if submit_code:
     df = pd.DataFrame(concept_detail_value)
     df["Value"] = df["Value"].astype(str)
     # Display the DataFrame
-    st.dataframe(df)
+    #st.dataframe(df)
     st.markdown('-------')
     st.subheader('Result of the analysis')
     score = df[df['Concept'] == 'Score']['Value'].values[0]
-    st.write('**Your march score is:**' + score + '/100')
+    st.write('Your march score is:' + score + '/100')
     st.markdown('-------')
     st.write('**Main Strenghts**')
     # Filter the DataFrame to get the rows with "Concept" starting with "Strength_"
