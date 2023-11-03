@@ -21,7 +21,7 @@ with st.form(key ='Form1'):
     #load position info
     
     position_title=st.text_input('job position')
-    description=st.text_input('job description')
+    description=st.text_area('job description')
     
     submit_code = st.form_submit_button(label ="Execute")
 
@@ -39,8 +39,7 @@ if submit_code:
         y dar feedback para mejorarlo"
     
     #instructions
-    instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum.#\
-           # Además entregar 5 principales razones del score."
+    instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum. Sólo entregar el número del score"
     instr_2="Entregar feedback con 3 principales fortalezas y 3 principales debilidades\
         del curriculum versus la descripción del cargo."
     instr_3="Entregar listado de 5 preguntas que pueden preguntar en el contexto de la empresa\
@@ -49,6 +48,7 @@ if submit_code:
     #prompt with a chat model
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
+        temperature=0.5,
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
