@@ -39,4 +39,4 @@ response = openai.ChatCompletion.create(
                "content": instr_1 + "curriculum:"+uploaded_file + "Cargo a postular:"+
                           position_title + "Descripción cargo:"+description}]
 )
-print(response["choices"][0]["message"]["content"])
+st.text(response["choices"][0]["message"]["content"])
