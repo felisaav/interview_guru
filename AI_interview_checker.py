@@ -46,9 +46,9 @@ if submit_code:
     #instructions
     instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum."
     instr_2="Entregar justificación del score con exactamente las 5 principales strengths y 5 principales weaknesses. No entregar más, no entregar menos"
-    instr_3='''como output entregar la información con el siguiente formato: \
+    instr_3='''como output entregar la información con el siguiente formato json: \
         data = {
-            "score": {75},
+            "score": 75,  
             "strengths": {
                 "strength_1": "Sólida formación académica en áreas relevantes para el cargo.",
                 "strength_2": "Experiencia en liderazgo de equipos y proyectos exitosos.",
@@ -78,8 +78,9 @@ if submit_code:
     )
     
     response_content = response["choices"][0]["message"]["content"]
-    result_data = json.loads(response_content)
+    #result_data = json.loads(response_content)
     
-    df = pd.DataFrame(result_data)
+    #df = pd.DataFrame(result_data)
     
-    st.dataframe(df)
+    #st.dataframe(df)
+    st.write(response_content)
