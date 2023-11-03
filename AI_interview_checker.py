@@ -103,3 +103,24 @@ if submit_code:
     df["Value"] = df["Value"].astype(str)
     # Display the DataFrame
     st.dataframe(df)
+    st.markdown('-------')
+    st.subheader('Result of the analysis')
+    score = df[df['Concept'] == 'Score']['Value'].values[0]
+    st.write("**Your march score is:**" + score)
+    st.markdown('-------')
+    st.write('**Main Strenghts**')
+    # Filter the DataFrame to get the rows with "Concept" starting with "Strength_"
+    strengths_df = df[df['Concept'].str.match(r'Strength(_\d+)?')]
+    # Now, you have the DataFrame containing strengths
+    # You can display them in Streamlit
+    for index, row in strengths_df.iterrows():
+        st.write(f"{row['Detail']}: {row['Value']}")
+    st.markdown('-------')
+    st.write('**Main Improvements to do**')
+    # Filter the DataFrame to get the rows with "Concept" starting with "Weakness_"
+    weakness_df = df[df['Concept'].str.match(r'Weakness(_\d+)?')]
+    # Now, you have the DataFrame containing weakness
+    # You can display them in Streamlit
+    for index, row in strengths_df.iterrows():
+        st.write(f"{row['Detail']}: {row['Value']}")
+
