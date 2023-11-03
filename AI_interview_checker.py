@@ -4,7 +4,7 @@ import openai
 import os
 import fitz  # PyMuPDF
 import numpy as np
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
 with st.form(key ='Form1'):
