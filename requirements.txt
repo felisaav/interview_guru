@@ -1,3 +1,4 @@
 streamlit
 pandas
 PyMuPDF==1.18.15
+PyPDF2
