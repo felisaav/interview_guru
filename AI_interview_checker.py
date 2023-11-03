@@ -78,9 +78,8 @@ if submit_code:
     )
     
     response_content = response["choices"][0]["message"]["content"]
-    #result_data = json.loads(response_content)
+    result_data = json.loads(response_content)
+    df = pd.DataFrame(result_data)
     
-    #df = pd.DataFrame(result_data)
-    
-    #st.dataframe(df)
-    st.write(response_content)
+    st.dataframe(df)
+    #st.write(response_content)
