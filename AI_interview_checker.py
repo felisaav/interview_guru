@@ -7,6 +7,7 @@ import numpy as np
 #import plotly.graph_objects as go
 #import matplotlib.pyplot as plt
 
+st.title('AI interview Guru')
 with st.form(key ='Form1'):
     uploaded_pdf = st.file_uploader("Load pdf: ", type=['pdf'])
 
@@ -42,7 +43,9 @@ if submit_code:
         y dar feedback para mejorarlo"
     
     #instructions
-    instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum. Sólo entregar el número del score, el cual será guardado en una variable float"
+    instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum."
+    instr_2="Entregar justificación del score con las 5 principales fortalezas y 5 principales aspectos por mejorar"
+    instr_3=
     
     #prompt with a chat model
     response = openai.ChatCompletion.create(
