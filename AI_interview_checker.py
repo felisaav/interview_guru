@@ -11,7 +11,7 @@ with st.form(key ='Form1'):
         doc = fitz.open(stream=uploaded_pdf.read(), filetype="pdf")
         text = ""
         for page in doc:
-            text += page.getText()
+            text += page.get_text()
         #st.write(text) 
         doc.close()
     #----------
