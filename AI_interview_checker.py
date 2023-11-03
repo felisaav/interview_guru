@@ -106,7 +106,7 @@ if submit_code:
     st.markdown('-------')
     st.subheader('Result of the analysis')
     score = df[df['Concept'] == 'Score']['Value'].values[0]
-    st.write("**Your march score is:**" + score)
+    st.write('**Your march score is:**' + score + '/100')
     st.markdown('-------')
     st.write('**Main Strenghts**')
     # Filter the DataFrame to get the rows with "Concept" starting with "Strength_"
