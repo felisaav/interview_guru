@@ -57,7 +57,7 @@ if submit_code:
     numbers = np.array(response["choices"][0]["message"]["content"])
     result = numbers[np.char.isnumeric(numbers)].astype(int)
 
-    fig, ax = = plt.subplots()
+    fig, ax = plt.subplots()
     fig = go.Figure(go.Indicator(
         mode = "gauge+number",
         value = result,
