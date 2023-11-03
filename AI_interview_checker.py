@@ -5,7 +5,7 @@ import os
 import fitz  # PyMuPDF
 import numpy as np
 #import plotly.graph_objects as go
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 with st.form(key ='Form1'):
     uploaded_pdf = st.file_uploader("Load pdf: ", type=['pdf'])
