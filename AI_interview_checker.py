@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-#import fitz
+import PyPDF2
 
 
 #def extract_data(uploaded_file):
