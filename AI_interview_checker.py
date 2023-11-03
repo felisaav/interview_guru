@@ -79,11 +79,6 @@ if submit_code:
     
     response_content = response["choices"][0]["message"]["content"]
     data = json.loads(response_content)
-    
-    #df = pd.DataFrame(result_data)
-    
-    #st.dataframe(df)
-    #st.write(response_content)
 
     #----------------------------
     # Create a list of dictionaries in the desired format
@@ -101,12 +96,12 @@ if submit_code:
     # Create the DataFrame
     df = pd.DataFrame(concept_detail_value)
     df["Value"] = df["Value"].astype(str)
-    # Display the DataFrame
-    #st.dataframe(df)
+    
+    # Display Results
     st.markdown('-------')
     st.subheader('Result of the analysis')
     score = df[df['Concept'] == 'Score']['Value'].values[0]
-    st.write('Your march score is:' + score + '/100')
+    st.write('Your march score is: ' + score + '/100')
     st.markdown('-------')
     st.write('**Main Strenghts**')
     # Filter the DataFrame to get the rows with "Concept" starting with "Strength_"
