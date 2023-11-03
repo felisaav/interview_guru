@@ -5,3 +5,4 @@ openai
 PyMuPDFb
 PyMuPDF
 plotly
+json
