@@ -45,7 +45,24 @@ if submit_code:
     #instructions
     instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum."
     instr_2="Entregar justificación del score con las 5 principales fortalezas y 5 principales aspectos por mejorar"
-    instr_3=
+    instr_3="como output entregar la información con el siguiente formato: \
+        data = {
+            "score": {75},
+            "strengths": {
+                "strength_1": "Sólida formación académica en áreas relevantes para el cargo.",
+                "strength_2": "Experiencia en liderazgo de equipos y proyectos exitosos.",
+                "strength_3": "Habilidades sólidas de comunicación y trabajo en equipo.",
+                "strength_4": "Capacidad para resolver problemas de manera creativa.",
+                "strength_5": "Adaptabilidad a entornos cambiantes y nuevas tecnologías."
+            },
+            "weaknesses": {
+                "weakness_1": "Falta de experiencia en ciertas tecnologías emergentes.",
+                "weakness_2": "Tendencia a ser perfeccionista y gastar demasiado tiempo en detalles.",
+                "weakness_3": "Dificultad para delegar tareas y confiar plenamente en otros.",
+                "weakness_4": "Necesidad de mejorar la gestión del tiempo y la planificación.",
+                "weakness_5": "Enfrentar dificultades para hablar en público y presentar ideas de manera efectiva."
+            }
+        }"
     
     #prompt with a chat model
     response = openai.ChatCompletion.create(
@@ -55,10 +72,10 @@ if submit_code:
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
-                   "content": instr_1 + "curriculum:"+text + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
+                   "content": instr_1 + instr_2 + instr_3 + "curriculum:"+text + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
     )
-    numbers = np.array(response["choices"][0]["message"]["content"])
-    result = numbers[np.char.isnumeric(numbers)].astype(int)
+    #numbers = np.array(response["choices"][0]["message"]["content"])
+    result = response["choices"][0]["message"]["content"]#numbers[np.char.isnumeric(numbers)].astype(int)
 
     #fig = go.Figure(go.Indicator(
     #    mode = "gauge+number",
