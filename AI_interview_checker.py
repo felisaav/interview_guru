@@ -10,7 +10,7 @@ import json
 
 st.title('AI interview Guru')
 with st.form(key ='Form1'):
-    uploaded_pdf = st.file_uploader("Load pdf: ", type=['pdf'])
+    uploaded_pdf = st.file_uploader("Load summary (in pdf format): ", type=['pdf'])
 
     if uploaded_pdf is not None:
         doc = fitz.open(stream=uploaded_pdf.read(), filetype="pdf")
