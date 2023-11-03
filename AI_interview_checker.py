@@ -42,8 +42,7 @@ if submit_code:
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
-                   "content": instr_1 + "curriculum:"+uploaded_file + "Cargo a postular:"+
-                              position_title + "Descripción cargo:"+description}]
+                   "content": instr_1 + "curriculum:"+uploaded_file + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
     )
 
     st.text(response["choices"][0]["message"]["content"])
