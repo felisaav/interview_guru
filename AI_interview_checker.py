@@ -17,6 +17,8 @@ openai.api_key = api_key
 position_title=st.text_input('job position')
 description=st.text_input('job description')
 
+submit_code = st.form_submit_button(label ="Execute")
+
 #system role
 role="eres un reclutador de RRHH experto, que puede analizar en detalle el curriculum, \
     entregar match con la posición a comparar, \
@@ -39,4 +41,5 @@ response = openai.ChatCompletion.create(
                "content": instr_1 + "curriculum:"+uploaded_file + "Cargo a postular:"+
                           position_title + "Descripción cargo:"+description}]
 )
-st.text(response["choices"][0]["message"]["content"])
+if submit_code:
+    st.text(response["choices"][0]["message"]["content"])
