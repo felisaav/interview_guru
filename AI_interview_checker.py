@@ -4,6 +4,7 @@ import openai
 import os
 import fitz  # PyMuPDF
 import numpy as np
+import json
 #import plotly.graph_objects as go
 #import matplotlib.pyplot as plt
 
@@ -75,8 +76,10 @@ if submit_code:
                   {"role": "user",
                    "content": instr_1 + instr_2 + instr_3 + "curriculum:"+text + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
     )
-    #numbers = np.array(response["choices"][0]["message"]["content"])
-    result = response["choices"][0]["message"]["content"]#numbers[np.char.isnumeric(numbers)].astype(int)
-    df = pd.DataFrame(result)
+    
+    response_content = response["choices"][0]["message"]["content"]
+    result_data = json.loads(response_content)
+    
+    df = pd.DataFrame(result_data)
     
     st.dataframe(df)
