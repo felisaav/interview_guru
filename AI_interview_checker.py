@@ -100,6 +100,6 @@ if submit_code:
     
     # Create the DataFrame
     df = pd.DataFrame(concept_detail_value)
-    
+    df["Value"] = df["Value"].astype(str)
     # Display the DataFrame
     st.dataframe(df)
