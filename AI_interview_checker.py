@@ -4,7 +4,7 @@ import openai
 import os
 
 
-with st.form(key ='Form1')
+with st.form(key ='Form1'):
     uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
     #if uploaded_file is not None:
     #    df = extract_data(uploaded_file)
