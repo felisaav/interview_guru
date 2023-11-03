@@ -12,7 +12,7 @@ with st.form(key ='Form1'):
         text = ""
         for page in doc:
             text += page.getText()
-        st.write(text) 
+        #st.write(text) 
         doc.close()
     #----------
     #if uploaded_file is not None:
