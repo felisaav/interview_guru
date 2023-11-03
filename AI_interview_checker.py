@@ -39,16 +39,13 @@ if submit_code:
         y dar feedback para mejorarlo"
     
     #instructions
-    instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum. Sólo entregar el número del score"
-    instr_2="Entregar feedback con 3 principales fortalezas y 3 principales debilidades\
-        del curriculum versus la descripción del cargo."
-    instr_3="Entregar listado de 5 preguntas que pueden preguntar en el contexto de la empresa\
-        y la descripción del cargo"
+    instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum. Sólo entregar el número del score, el cual será guardado en una variable float"
     
     #prompt with a chat model
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         temperature=0.5,
+        max_tokens= 200
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
