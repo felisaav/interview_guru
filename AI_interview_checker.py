@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
 #    st.write(df)
 
 # Load the key from a file
-api_key = open(st.secrets['key'], 'r').read().strip('\n')
+api_key = open(st.secrets["key"], 'r').read().strip('\n')
 assert api_key.startswith('sk-'), 'Error loding the API key. OpenAI API Keys start with "sk-".'
 openai.api_key = api_key
 
