@@ -3,6 +3,8 @@ import pandas as pd
 import openai
 import os
 import fitz  # PyMuPDF
+import numpy as np
+import plotly.graph_objects as go
 
 with st.form(key ='Form1'):
     uploaded_pdf = st.file_uploader("Load pdf: ", type=['pdf'])
@@ -51,5 +53,14 @@ if submit_code:
                   {"role": "user",
                    "content": instr_1 + "curriculum:"+text + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
     )
+    numbers = np.array(response["choices"][0]["message"]["content"])
+    result = numbers[np.char.isnumeric(numbers)].astype(int)
 
-    st.text(response["choices"][0]["message"]["content"])
+    fig = go.Figure(go.Indicator(
+        mode = "gauge+number",
+        value = result,
+        domain = {'x': [0, 1], 'y': [0, 1]},
+        title = {'text': "Match Scoring"}))
+
+    st.plot(fig)
+    st.text(result)
