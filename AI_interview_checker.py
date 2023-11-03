@@ -3,21 +3,24 @@ import pandas as pd
 import openai
 import os
 
-uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
-#if uploaded_file is not None:
-#    df = extract_data(uploaded_file)
-#    st.write(df)
+
+with st.form(key ='Form1')
+    uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
+    #if uploaded_file is not None:
+    #    df = extract_data(uploaded_file)
+    #    st.write(df)
+    #load position info
+    position_title=st.text_input('job position')
+    description=st.text_input('job description')
+    
+    submit_code = st.form_submit_button(label ="Execute")
 
 # Load the key from a file
 api_key = st.secrets.key#open(st.secrets.key, 'r').read().strip('\n')
 assert api_key.startswith('sk-'), 'Error loding the API key. OpenAI API Keys start with "sk-".'
 openai.api_key = api_key
 
-#load position info
-position_title=st.text_input('job position')
-description=st.text_input('job description')
 
-submit_code = st.form_submit_button(label ="Execute")
 
 #system role
 role="eres un reclutador de RRHH experto, que puede analizar en detalle el curriculum, \
