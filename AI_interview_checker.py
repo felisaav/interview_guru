@@ -45,7 +45,7 @@ if submit_code:
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         temperature=0.5,
-        max_tokens= 200
+        max_tokens= 200,
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
