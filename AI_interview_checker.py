@@ -45,8 +45,14 @@ if submit_code:
     
     #instructions
     instr_1="Entregar un score de 1 a 100 respecto al match de las skills del cargo vs curriculum."
-    instr_2="Entregar justificación del score con exactamente las 5 principales strengths y 5 principales weaknesses. No entregar más, no entregar menos"
-    instr_3='''como output entregar la información con el siguiente formato json: \
+    
+    instr_2='''Entregar justificación del score con exactamente las 5 principales strengths y 5 principales weaknesses.\
+        Es necesario ser muy específico respecto a las strentghs y weaknesses, incorporando diferencias en skills requeridas vs que las que se muestran en el curriculum. \
+        No entregar exactamente 5 strenghts y 5 weaknesses.'''
+    
+    instr_3='''como output entregar la información con el siguiente formato JSON.'''
+    
+    instr_4='''A continuación te doy un ejemplo: \
         data = {
             "score": 75,  
             "strengths": {
@@ -57,9 +63,9 @@ if submit_code:
                 "strength_5": "Adaptabilidad a entornos cambiantes y nuevas tecnologías."
             },
             "weaknesses": {
-                "weakness_1": "Falta de experiencia en ciertas tecnologías emergentes.",
-                "weakness_2": "Tendencia a ser perfeccionista y gastar demasiado tiempo en detalles.",
-                "weakness_3": "Dificultad para delegar tareas y confiar plenamente en otros.",
+                "weakness_1": "Falta de experiencia en sql, python o R.",
+                "weakness_2": "No se observa experiencia en proyectos con equipos remotos, como lo solicita el job posting",
+                "weakness_3": "Falta de experiencia en aspectos de regulación laboral",
                 "weakness_4": "Necesidad de mejorar la gestión del tiempo y la planificación.",
                 "weakness_5": "Enfrentar dificultades para hablar en público y presentar ideas de manera efectiva."
             }
@@ -79,43 +85,43 @@ if submit_code:
     
     response_content = response["choices"][0]["message"]["content"]
     data = json.loads(response_content)
-
+    st.write(data)
     #----------------------------
     # Create a list of dictionaries in the desired format
-    concept_detail_value = []
+    #concept_detail_value = []
 
     # Add the "score" as the first entry
-    concept_detail_value.append({"Concept": "Score", "Detail": "Score", "Value": data["score"]})
+    #concept_detail_value.append({"Concept": "Score", "Detail": "Score", "Value": data["score"]})
     
     # Add the strengths and weaknesses
-    for category, category_data in data.items():
-        if category in ["strengths", "weaknesses"]:
-            for key, value in category_data.items():
-                concept_detail_value.append({"Concept": category.capitalize(), "Detail": key, "Value": value})
+    #for category, category_data in data.items():
+    #    if category in ["strengths", "weaknesses"]:
+    #        for key, value in category_data.items():
+    #            concept_detail_value.append({"Concept": category.capitalize(), "Detail": key, "Value": value})
     
     # Create the DataFrame
-    df = pd.DataFrame(concept_detail_value)
-    df["Value"] = df["Value"].astype(str)
+    #df = pd.DataFrame(concept_detail_value)
+    #df["Value"] = df["Value"].astype(str)
     
     # Display Results
-    st.markdown('-------')
-    st.subheader('Result of the analysis')
-    score = df[df['Concept'] == 'Score']['Value'].values[0]
-    st.write('Your march score is: ' + score + '/100')
-    st.markdown('-------')
-    st.write('**Main Strenghts**')
+    #st.markdown('-------')
+    #st.subheader('Result of the analysis')
+    #score = df[df['Concept'] == 'Score']['Value'].values[0]
+    #st.write('Your march score is: ' + score + '/100')
+    #st.markdown('-------')
+    #st.write('**Main Strenghts**')
     # Filter the DataFrame to get the rows with "Concept" starting with "Strength_"
-    strengths_df = df[df['Concept'].str.match(r'Strength(_\d+)?')]
+    #strengths_df = df[df['Concept'].str.match(r'Strength(_\d+)?')]
     # Now, you have the DataFrame containing strengths
     # You can display them in Streamlit
-    for index, row in strengths_df.iterrows():
-        st.write(f"{row['Detail']}: {row['Value']}")
-    st.markdown('-------')
-    st.write('**Main Improvements to do**')
+    #for index, row in strengths_df.iterrows():
+    #    st.write(f"{row['Detail']}: {row['Value']}")
+    #st.markdown('-------')
+    #st.write('**Main Improvements to do**')
     # Filter the DataFrame to get the rows with "Concept" starting with "Weakness_"
-    weakness_df = df[df['Concept'].str.match(r'Weakness(_\d+)?')]
+    #weakness_df = df[df['Concept'].str.match(r'Weakness(_\d+)?')]
     # Now, you have the DataFrame containing weakness
     # You can display them in Streamlit
-    for index, row in strengths_df.iterrows():
-        st.write(f"{row['Detail']}: {row['Value']}")
+    #for index, row in strengths_df.iterrows():
+    #    st.write(f"{row['Detail']}: {row['Value']}")
 
