@@ -84,8 +84,8 @@ if submit_code:
     )
     
     response_content = response["choices"][0]["message"]["content"]
-    data = json.loads(response_content)
-    st.write(data)
+    #data = json.loads(response_content)
+    st.write(response_content)
     #----------------------------
     # Create a list of dictionaries in the desired format
     #concept_detail_value = []
