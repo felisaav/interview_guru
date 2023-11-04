@@ -51,24 +51,20 @@ if submit_code:
     
     instr_3='''como output entregar la información en formato JSON.'''
     
-    instr_4='''A continuación te doy un ejemplo: \
+    instr_4='''A continuación te doy un ejemplo del output, no necesariamente deben ser las mismas frases: \
         data = {
             "score": 75,  
-            "strengths": {
-                "strength_1": "Sólida formación académica en áreas relevantes para el cargo.",
-                "strength_2": "Experiencia en liderazgo de equipos y proyectos exitosos.",
-                "strength_3": "Habilidades sólidas de comunicación y trabajo en equipo.",
-                "strength_4": "Capacidad para resolver problemas de manera creativa.",
-                "strength_5": "Adaptabilidad a entornos cambiantes y nuevas tecnologías."
-            },
-            "weaknesses": {
-                "weakness_1": "Falta de experiencia en sql, python o R.",
-                "weakness_2": "No se observa experiencia en proyectos con equipos remotos, como lo solicita el job posting",
-                "weakness_3": "Falta de experiencia en aspectos de regulación laboral",
-                "weakness_4": "Necesidad de mejorar la gestión del tiempo y la planificación.",
-                "weakness_5": "Enfrentar dificultades para hablar en público y presentar ideas de manera efectiva."
+            "strength_1": "Sólida formación académica en áreas relevantes para el cargo.",
+            "strength_2": "Experiencia en liderazgo de equipos y proyectos exitosos.",
+            "strength_3": "Habilidades sólidas de comunicación y trabajo en equipo.",
+            "strength_4": "Capacidad para resolver problemas de manera creativa.",
+            "strength_5": "Adaptabilidad a entornos cambiantes y nuevas tecnologías."
+            "weakness_1": "Falta de experiencia en sql, python o R.",
+            "weakness_2": "No se observa experiencia en proyectos con equipos remotos, como lo solicita el job posting",
+            "weakness_3": "Falta de experiencia en aspectos de regulación laboral",
+            "weakness_4": "Sólo se ven cursos en finanzas corporativas, no experiencia laboral.",
+            "weakness_5": "No se ve experiencia en la industria de health care"
             }
-        }
     '''
     
     #prompt with a chat model
@@ -79,7 +75,7 @@ if submit_code:
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
-                   "content": instr_1 + instr_2 + instr_3 + "curriculum:"+text + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
+                   "content": instr_1 + instr_2 + instr_3 + instr_4 + "curriculum:"+text + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
     )
     
     response_content = response["choices"][0]["message"]["content"]
