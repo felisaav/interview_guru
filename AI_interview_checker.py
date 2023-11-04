@@ -73,7 +73,7 @@ if submit_code:
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
-                   "content": instr_1, instr_2,instr_3, "curriculum: ",text , "Cargo a postular:", position_title , "Descripción cargo:" , description}]
+                   "content": instr_1, instr_2, instr_3, "curriculum: ", text, "Cargo a postular:", position_title, "Descripción cargo:", description}]
     )
     
     response_content = response["choices"][0]["message"]["content"]
