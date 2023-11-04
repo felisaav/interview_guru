@@ -48,9 +48,9 @@ if submit_code:
     
     instr_2='''Entregar justificación del score con exactamente las 5 principales strengths y 5 principales weaknesses.\
         Es necesario ser muy específico respecto a las strentghs y weaknesses, incorporando diferencias en skills requeridas vs que las que se muestran en el curriculum. \
-        No entregar exactamente 5 strenghts y 5 weaknesses.'''
+        Entregar exactamente 5 strenghts y 5 weaknesses.'''
     
-    instr_3='''como output entregar la información con el siguiente formato JSON.'''
+    instr_3='''como output entregar la información en formato JSON.'''
     
     instr_4='''A continuación te doy un ejemplo: \
         data = {
