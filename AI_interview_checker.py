@@ -53,29 +53,28 @@ if submit_code:
     
     instr_4='''A continuación te doy un ejemplo del output, no necesariamente deben ser las mismas frases: \
         data = {
-            "score": 75,  
-            "strength_1": "Sólida formación académica en áreas relevantes para el cargo.",
-            "strength_2": "Experiencia en liderazgo de equipos y proyectos exitosos.",
-            "strength_3": "Habilidades sólidas de comunicación y trabajo en equipo.",
-            "strength_4": "Capacidad para resolver problemas de manera creativa.",
-            "strength_5": "Adaptabilidad a entornos cambiantes y nuevas tecnologías."
-            "weakness_1": "Falta de experiencia en sql, python o R.",
-            "weakness_2": "No se observa experiencia en proyectos con equipos remotos, como lo solicita el job posting",
-            "weakness_3": "Falta de experiencia en aspectos de regulación laboral",
-            "weakness_4": "Sólo se ven cursos en finanzas corporativas, no experiencia laboral.",
-            "weakness_5": "No se ve experiencia en la industria de health care"
+            score: 75,  
+            strength_1: "Sólida formación académica en áreas relevantes para el cargo.",
+            strength_2: "Experiencia en liderazgo de equipos y proyectos exitosos.",
+            strength_3: "Habilidades sólidas de comunicación y trabajo en equipo.",
+            strength_4: "Capacidad para resolver problemas de manera creativa.",
+            strength_5: "Adaptabilidad a entornos cambiantes y nuevas tecnologías."
+            weakness_1: "Falta de experiencia en sql, python o R.",
+            weakness_2: "No se observa experiencia en proyectos con equipos remotos, como lo solicita el job posting",
+            weakness_3: "Falta de experiencia en aspectos de regulación laboral",
+            weakness_4: "Sólo se ven cursos en finanzas corporativas, no experiencia laboral.",
+            weakness_5: "No se ve experiencia en la industria retail"
             }
     '''
     
     #prompt with a chat model
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        temperature=0.5,
-        #max_tokens= 500,
+        #temperature=0.5,
         messages=[{"role": "system",
                    "content": role},
                   {"role": "user",
-                   "content": instr_1 + instr_2 + instr_3 + instr_4 + "curriculum:"+text + "Cargo a postular:"+ position_title + "Descripción cargo:"+description}]
+                   "content": instr_1, instr_2,instr_3, "curriculum: ",text , "Cargo a postular:", position_title , "Descripción cargo:" , description}]
     )
     
     response_content = response["choices"][0]["message"]["content"]
