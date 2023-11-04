@@ -5,8 +5,6 @@ import os
 import fitz  # PyMuPDF
 import numpy as np
 import json
-#import plotly.graph_objects as go
-#import matplotlib.pyplot as plt
 
 st.title('AI interview Guru')
 with st.form(key ='Form1'):
