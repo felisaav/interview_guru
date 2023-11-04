@@ -6,6 +6,7 @@ import fitz  # PyMuPDF
 import numpy as np
 import json
 
+
 st.title('AI interview Guru')
 with st.form(key ='Form1'):
     uploaded_pdf = st.file_uploader("Load summary (in pdf format): ", type=['pdf'])
