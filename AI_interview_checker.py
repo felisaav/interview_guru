@@ -22,32 +22,32 @@ with tab1:
         submit_code_1 = st.form_submit_button(label ="ResumeRX")
 
         if submit_code_1:
-        # Load the key from a file
-        api_key = st.secrets.key#open(st.secrets.key, 'r').read().strip('\n')
-        assert api_key.startswith('sk-'), 'Error loding the API key. OpenAI API Keys start with "sk-".'
-        openai.api_key = api_key
+            # Load the key from a file
+            api_key = st.secrets.key#open(st.secrets.key, 'r').read().strip('\n')
+            assert api_key.startswith('sk-'), 'Error loding the API key. OpenAI API Keys start with "sk-".'
+            openai.api_key = api_key
 
-        #system role
-        role="eres un reclutador de RRHH experto, que puede analizar en detalle el curriculum, \
-            entregamdo insights para mejorar el currículum"
-        
-        #instructions
-        instr_1_1="Entregar un score de 1 a 100 respecto a la calidad del curriculum."
-        instr_1_2="Entregar 5 principales Fortalezas y 5 principales debilidades del curriculum, debe ser exacto el número de 5. En el caso de las debilidades entregar una propuesta de nueva redacción"
-        instr_1_3="Entregar listado de las 5 principales skills técnicas a destacar y 5 skills no técnicas a destacar del currículum. Debe ser exacto el número 5"
-        instr_1_4="Responder en el mismo idioma del currículum"
-        #prompt with a chat model
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            #temperature=0.5,
-            messages=[{"role": "system",
-                       "content": role},
-                      {"role": "user",
-                       "content": instr_1_1 + instr_1_2 + instr_1_3 + instr_1_4 + "curriculum: " + text }]
-        )
-        
-        response_content_1 = response["choices"][0]["message"]["content"]
-        st.write(response_content_1)
+            #system role
+            role="eres un reclutador de RRHH experto, que puede analizar en detalle el curriculum, \
+                entregamdo insights para mejorar el currículum"
+            
+            #instructions
+            instr_1_1="Entregar un score de 1 a 100 respecto a la calidad del curriculum."
+            instr_1_2="Entregar 5 principales Fortalezas y 5 principales debilidades del curriculum, debe ser exacto el número de 5. En el caso de las debilidades entregar una propuesta de nueva redacción"
+            instr_1_3="Entregar listado de las 5 principales skills técnicas a destacar y 5 skills no técnicas a destacar del currículum. Debe ser exacto el número 5"
+            instr_1_4="Responder en el mismo idioma del currículum"
+            #prompt with a chat model
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                #temperature=0.5,
+                messages=[{"role": "system",
+                           "content": role},
+                          {"role": "user",
+                           "content": instr_1_1 + instr_1_2 + instr_1_3 + instr_1_4 + "curriculum: " + text }]
+            )
+            
+            response_content_1 = response["choices"][0]["message"]["content"]
+            st.write(response_content_1)
 
 
 with tab2:
