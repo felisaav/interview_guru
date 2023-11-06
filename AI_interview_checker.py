@@ -9,7 +9,7 @@ import json
 st.title('AI interview Guru')
 tab1, tab2,tab3 = st.tabs(["ResumeRX", "JobMatchMaker", "Read Me"])
 with tab1:
-    with st.form(key ='Form1'):
+    with st.form(key ='Form_1'):
         uploaded_pdf = st.file_uploader("Load summary (in pdf format): ", type=['pdf'])
     
         if uploaded_pdf is not None:
@@ -19,7 +19,7 @@ with tab1:
                 text += page.get_text()
             #st.write(text) 
             doc.close()
-        submit_code = st.form_submit_button(label ="Execute")
+        submit_code_1 = st.form_submit_button(label ="ResumeRX")
 with tab2:
     with st.form(key ='Form1'):
         uploaded_pdf = st.file_uploader("Load summary (in pdf format): ", type=['pdf'])
