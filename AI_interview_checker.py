@@ -7,7 +7,7 @@ import numpy as np
 import json
 
 st.title('AI interview Guru')
-tab1, tab2,tab3 = st.tabs(["ResumeRX", "JobMatchMaker", "Read Me"])
+tab1, tab2,tab3,tab4 = st.tabs(["ResumeRX", "JobMatchMaker","InterviewIQBoost", "Read Me"])
 with tab1:
     with st.form(key ='Form_1'):
         uploaded_pdf = st.file_uploader("Load summary (in pdf format): ", type=['pdf'])
@@ -120,4 +120,6 @@ with tab2:
         response_content = response["choices"][0]["message"]["content"]
         st.write(response_content)
     with tab3:
-        st.write("Hello world")
+        st.write("""**Exciting updates in progress!** We're hard at work developing a new feature to enhance your interview preparation experience. While we're 
+                    still working on it, stay tuned for an even more valuable resource to help you ace your interviews. We appreciate your patience and look
+                    forward to bringing you the best interview preparation tools""")
