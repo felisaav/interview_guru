@@ -35,7 +35,7 @@ with tab1:
             instr_1_1="Entregar un score de 1 a 100 respecto a la calidad del curriculum."
             instr_1_2="Entregar 5 principales Fortalezas y 5 principales debilidades del curriculum, debe ser exacto el número de 5. En el caso de las debilidades entregar una propuesta de nueva redacción"
             instr_1_3="Entregar listado de las 5 principales skills técnicas a destacar y 5 skills no técnicas a destacar del currículum. Debe ser exacto el número 5"
-            instr_1_4="Identificar idiona del curriculum y responder en el mismo idioma"
+            instr_1_4="Identificar idiona original del curriculum y responder en el mismo idioma. Si, por ejemplo, el currículum está en inglés las respuestas deben ser en inglés"
             #prompt with a chat model
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
