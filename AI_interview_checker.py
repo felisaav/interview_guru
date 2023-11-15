@@ -39,7 +39,7 @@ with tab1:
             #prompt with a chat model
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
-                #temperature=0.5,
+                temperature=0, #consistency in the answer
                 messages=[{"role": "system",
                            "content": role},
                           {"role": "user",
@@ -110,7 +110,7 @@ with tab2:
         #prompt with a chat model
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
-            #temperature=0.5,
+            temperature=0,
             messages=[{"role": "system",
                        "content": role},
                       {"role": "user",
