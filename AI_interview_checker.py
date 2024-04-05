@@ -24,18 +24,29 @@ with tab0: #NLP group project
     with st.form(key ='Form_0'):
         uploaded_resume = st.file_uploader("Load resumes (in pdf format): ", type=['pdf'],accept_multiple_files=True)
         uploaded_job_description = st.file_uploader("Load Job Description (in pdf format): ", type=['pdf'])
-        text=[]
         i=0
+#----------------------
+        text = []  # Initialize text as a list of lists
         
         for uploaded_file in uploaded_resume:
-        
             if uploaded_file is not None:
                 doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
-                text=[]
+                text.append([])  # Append an empty list for each resume
                 for page in doc:
-                    text[i] += page.get_text()
+                    text[i].append(page.get_text())  # Append text to the inner list
                 doc.close()
-                i=i+1
+                i += 1
+
+#----------------------       
+#        for uploaded_file in uploaded_resume:
+        
+#            if uploaded_file is not None:
+#                doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
+#                text=[]
+#                for page in doc:
+#                    text[i] += page.get_text()
+#                doc.close()
+#                i=i+1
 
         if uploaded_job_description is not None:
             doc = fitz.open(stream=uploaded_job_description.read(), filetype="pdf")
