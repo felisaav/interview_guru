@@ -30,7 +30,7 @@ with tab0: #NLP group project
             st.write(text[0])
         
         submit_code_0 = st.form_submit_button(label ="JobMatchRecruiter")
-
+'''
 with tab1:
     with st.form(key ='Form_1'):
         uploaded_pdf = st.file_uploader("Load summary (in pdf format): ", type=['pdf'])
@@ -146,3 +146,4 @@ with tab2:
         st.write("""**Exciting updates in progress!** We're hard at work developing a new feature to enhance your interview preparation experience. While we're 
                     still working on it, stay tuned for an even more valuable resource to help you ace your interviews. We appreciate your patience and look
                     forward to bringing you the best interview preparation tools""")
+'''
