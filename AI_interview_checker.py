@@ -28,11 +28,14 @@ with tab0: #NLP group project
         
         
         for uploaded_file in uploaded_resume:
+            i=0
             if uploaded_file is not None:
                 doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
+                text[i]=""
                 for page in doc:
-                    text += page.get_text()
+                    text[i] += page.get_text()
                 doc.close()
+                i +=1
 
         if uploaded_job_description is not None:
             doc = fitz.open(stream=uploaded_job_description.read(), filetype="pdf")
@@ -44,7 +47,8 @@ with tab0: #NLP group project
         submit_code_0 = st.form_submit_button(label ="JobMatchRecruiter")
         
         if submit_code_0:
-            st.write(job_description)
+            st.write(text[0])
+            st.write(text[1])
             
 
 with tab1:
