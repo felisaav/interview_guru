@@ -23,20 +23,29 @@ tab0, tab1, tab2,tab3,tab4 = st.tabs(["JobMatchRecruiter","ResumeRX", "JobMatchM
 with tab0: #NLP group project
     with st.form(key ='Form_0'):
         uploaded_resume = st.file_uploader("Load resumes (in pdf format): ", type=['pdf'],accept_multiple_files=True)
+        uploaded_job_description = st.file_uploader("Load Job Description (in pdf format): ", type=['pdf'])
         text=[]
+        
         
         for uploaded_file in uploaded_resume:
             if uploaded_file is not None:
                 doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
                 for page in doc:
                     text += page.get_text()
-                #st.write(text) 
                 doc.close()
 
+        if uploaded_job_description is not None:
+            doc = fitz.open(stream=uploaded_job_description.read(), filetype="pdf")
+            job_description = ""
+            for page in doc:
+                job_description += page.get_text()
+            doc.close()
+            
         submit_code_0 = st.form_submit_button(label ="JobMatchRecruiter")
         
         if submit_code_0:
-            st.write(text)
+            st.write(job_description)
+            
 
 with tab1:
     with st.form(key ='Form_1'):
