@@ -26,10 +26,12 @@ with tab0: #NLP group project
         text=[]
         
         for uploaded_file in uploaded_resume:
-            text.append(read_pdf(uploaded_file))
-            st.write(text[0])
+            text.append(read_pdf(uploaded_file.read()))
+            
         
         submit_code_0 = st.form_submit_button(label ="JobMatchRecruiter")
+        if submit_code_0:
+            st.write(text[0])
 
 with tab1:
     with st.form(key ='Form_1'):
