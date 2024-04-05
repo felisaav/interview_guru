@@ -6,9 +6,29 @@ import fitz  # PyMuPDF
 import numpy as np
 #import json
 
+# functions
+##Read pdf files
+def read_pdf(file):
+    doc = fitz.open(file)
+    text = ""
+    for page in doc:
+        text += page.get_text()
+    doc.close()
+    return text
+
 
 st.title('AI interview Guru')
-tab1, tab2,tab3,tab4 = st.tabs(["ResumeRX", "JobMatchMaker","InterviewIQBoost", "Read Me"])
+tab0, tab1, tab2,tab3,tab4 = st.tabs(["JobMatchRecruiter","ResumeRX", "JobMatchMaker","InterviewIQBoost", "Read Me"])
+with tab0:
+    with st.form(key ='Form_1'):
+        uploaded_resume = st.file_uploader("Load resumes (in pdf format): ", type=['pdf'],accept_multiple_files=True)
+        text=[]
+        
+        for uploaded_file in uploaded_resume:
+            text.append(read_pdf(uploaded_file))
+            st.write(text[0])
+
+
 with tab1:
     with st.form(key ='Form_1'):
         uploaded_pdf = st.file_uploader("Load summary (in pdf format): ", type=['pdf'])
