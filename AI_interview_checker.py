@@ -31,11 +31,10 @@ with tab0: #NLP group project
             i=0
             if uploaded_file is not None:
                 doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
-                text[i]=""
+                text=[]
                 for page in doc:
-                    text[i] += page.get_text()
+                    text += page.get_text()
                 doc.close()
-                i +=1
 
         if uploaded_job_description is not None:
             doc = fitz.open(stream=uploaded_job_description.read(), filetype="pdf")
