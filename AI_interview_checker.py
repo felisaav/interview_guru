@@ -19,7 +19,8 @@ def read_pdf(file):
 
 st.title('AI interview Guru')
 tab0, tab1, tab2,tab3,tab4 = st.tabs(["JobMatchRecruiter","ResumeRX", "JobMatchMaker","InterviewIQBoost", "Read Me"])
-with tab0:
+
+with tab0: #NLP group project
     with st.form(key ='Form_1'):
         uploaded_resume = st.file_uploader("Load resumes (in pdf format): ", type=['pdf'],accept_multiple_files=True)
         text=[]
@@ -27,7 +28,8 @@ with tab0:
         for uploaded_file in uploaded_resume:
             text.append(read_pdf(uploaded_file))
             st.write(text[0])
-
+        
+        submit_code_0 = st.form_submit_button(label ="JobMatchRecruiter")
 
 with tab1:
     with st.form(key ='Form_1'):
