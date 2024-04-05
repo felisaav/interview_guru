@@ -36,7 +36,7 @@ with tab0: #NLP group project
         submit_code_0 = st.form_submit_button(label ="JobMatchRecruiter")
         
         if submit_code_0:
-            st.write(text[0])
+            st.write(text)
 
 with tab1:
     with st.form(key ='Form_1'):
