@@ -115,6 +115,10 @@ with tab0: #NLP group project
         submit_code_0 = st.form_submit_button(label ="JobMatchRecruiter")
         
         if submit_code_0:
+            api_key = st.secrets.key#open(st.secrets.key, 'r').read().strip('\n')
+            assert api_key.startswith('sk-'), 'Error loding the API key. OpenAI API Keys start with "sk-".'
+            openai.api_key = api_key
+        
             #Process and embedding job description
             j_d=embedding_vector(job_description)
 
