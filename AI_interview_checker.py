@@ -123,25 +123,44 @@ with tab0: #NLP group project
             j_d=embedding_vector(job_description)
 
             #Analyze resumes
-            resumes=pd.DataFrame()
-            for i in range(len(text)):
-                if 'resumes' not in globals():
-                    resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
-                # Append the new resume data to the DataFrame
-                resumes = resumes.append(preprocess_cv(text[i]), ignore_index=True)
+            #------------------------
+            #resumes=pd.DataFrame()
+            #for i in range(len(text)):
+            #    if 'resumes' not in globals():
+            #        resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
+            #    # Append the new resume data to the DataFrame
+            #    resumes = resumes.append(preprocess_cv(text[i]), ignore_index=True)
 
-            st.write(resumes)
+            #st.write(resumes)
 
-            resumes['merged_info'] = resumes.apply(merge_columns, axis=1)
+            #resumes['merged_info'] = resumes.apply(merge_columns, axis=1)
 
-            # Apply the embedding_vector function to the "merged_info" column
-            resumes['embedding'] = resumes['merged_info'].apply(embedding_vector)
+            ## Apply the embedding_vector function to the "merged_info" column
+            #resumes['embedding'] = resumes['merged_info'].apply(embedding_vector)
             
-            # Apply the similarity_score function between the resulting embeddings and the constant vector 'j_d'
+            ## Apply the similarity_score function between the resulting embeddings and the constant vector 'j_d'
+            #resumes['score'] = resumes.apply(lambda row: similarity_score(row['embedding'], j_d), axis=1)
+            
+            #st.write(resumes.sort_values(by='score', ascending=False))
+            #------------------------
+            # Analyze resumes
+            resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])  # Initialize DataFrame
+            
+            for i in range(len(text)):
+                # Append the new resume data to the DataFrame
+                new_row = preprocess_cv(text[i])
+                resumes = resumes.append(new_row, ignore_index=True)
+            
+            # Check the DataFrame structure
+            st.write(resumes)
+            
+            # Further processing
+            resumes['merged_info'] = resumes.apply(merge_columns, axis=1)
+            resumes['embedding'] = resumes['merged_info'].apply(embedding_vector)
             resumes['score'] = resumes.apply(lambda row: similarity_score(row['embedding'], j_d), axis=1)
             
+            # Display the sorted DataFrame
             st.write(resumes.sort_values(by='score', ascending=False))
-
 
 
 
