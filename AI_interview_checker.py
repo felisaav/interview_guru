@@ -140,7 +140,7 @@ with tab0: #NLP group project
             # Apply the similarity_score function between the resulting embeddings and the constant vector 'j_d'
             resumes['score'] = resumes.apply(lambda row: similarity_score(row['embedding'], j_d), axis=1)
             
-            resumes.sort_values(by='score', ascending=False)
+            st.write(resumes.sort_values(by='score', ascending=False))
 
 
 
