@@ -5,4 +5,5 @@ openai==0.28
 PyMuPDFb
 PyMuPDF
 plotly
-st_lottie
+requests
+streamlit_lottie
