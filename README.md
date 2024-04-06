@@ -21,8 +21,7 @@ Welcome to AI Interview Guru, your ultimate tool for streamlining the job applic
 
 The cosine similarity score measures the cosine of the angle between two vectors in a multidimensional space. In the context of AI Interview Guru, it quantifies the similarity between the embeddings of a resume and a job description. The formula for cosine similarity is as follows:
 
-Cosine Similarity
-$ Cosine Similarity= ∥A∥∥B∥ / A⋅B $
+Cosine Similarity= $ |A|*|B|/A⋅B $
 ​
  
 
