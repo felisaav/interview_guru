@@ -87,19 +87,19 @@ def merge_columns(row):
 #-----------------------------------------------------------
 
 # Create two columns
-left_column, right_column = st.columns(2)
+#left_column, right_column = st.columns(2)
 
 # Now you can use left_column and right_column
-with left_column:
-    st.title('AI interview Guru')
+#with left_column:
+#    st.title('AI interview Guru')
 
-with right_column:
-    lottie_coding=load_lottieurl("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json")
-with right_column:
-	st_lottie(lottie_coding, height=300, key="coding")
+#with right_column:
+#    lottie_coding=load_lottieurl("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json")
+#with right_column:
+#	st_lottie(lottie_coding, height=300, key="coding")
     
 
-#st.title('AI interview Guru')
+st.title('AI interview Guru')
 tab0, tab1, tab2,tab3,tab4 = st.tabs(["JobMatchRecruiter","ResumeRX", "JobMatchMaker","InterviewIQBoost", "Read Me"])
 
 with tab0: #NLP group project
