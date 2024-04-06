@@ -145,22 +145,25 @@ with tab0: #NLP group project
             #------------------------
             # Analyze resumes
             resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])  # Initialize DataFrame
+
+            print(type(resumes))  # Check the type of resumes
+            print(resumes.head())  # Print the first few rows to inspect its structure
+
+            #for i in range(len(text)):
+            #    # Append the new resume data to the DataFrame
+            #    new_row = preprocess_cv(text[i])
+            #    resumes = resumes.append(new_row, ignore_index=True)
             
-            for i in range(len(text)):
-                # Append the new resume data to the DataFrame
-                new_row = preprocess_cv(text[i])
-                resumes = resumes.append(new_row, ignore_index=True)
+            ## Check the DataFrame structure
+            #st.write(resumes)
             
-            # Check the DataFrame structure
-            st.write(resumes)
+            ## Further processing
+            #resumes['merged_info'] = resumes.apply(merge_columns, axis=1)
+            #resumes['embedding'] = resumes['merged_info'].apply(embedding_vector)
+            #resumes['score'] = resumes.apply(lambda row: similarity_score(row['embedding'], j_d), axis=1)
             
-            # Further processing
-            resumes['merged_info'] = resumes.apply(merge_columns, axis=1)
-            resumes['embedding'] = resumes['merged_info'].apply(embedding_vector)
-            resumes['score'] = resumes.apply(lambda row: similarity_score(row['embedding'], j_d), axis=1)
-            
-            # Display the sorted DataFrame
-            st.write(resumes.sort_values(by='score', ascending=False))
+            ## Display the sorted DataFrame
+            #st.write(resumes.sort_values(by='score', ascending=False))
 
 
 
