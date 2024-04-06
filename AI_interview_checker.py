@@ -74,7 +74,12 @@ def embedding_vector(text):
 
 def similarity_score(embedding_1,embedding_2):
     a=np.dot(embedding_1, embedding_2)
-    return(a)
+    # Calculate the magnitudes of the embedding vectors
+    norm_1 = np.linalg.norm(embedding_1)
+    norm_2 = np.linalg.norm(embedding_2)
+    # Calculate the cosine similarity score
+    cosine_similarity = a / (norm_1 * norm_2)
+    return cosine_similarity
 
 def merge_columns(row):
     # Convert elements to strings before joining
