@@ -6,4 +6,5 @@ PyMuPDFb
 PyMuPDF
 plotly
 requests
+st_lottie
 streamlit_lottie
