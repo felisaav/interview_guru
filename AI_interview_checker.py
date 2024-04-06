@@ -126,8 +126,8 @@ with tab0: #NLP group project
             resumes=pd.DataFrame()
             for i in range(len(text)):
                 # Create a DataFrame to store the resumes if it doesn't exist yet
-                if 'resumes' not in globals():
-                    resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
+                #if 'resumes' not in globals():
+                    #resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
                 # Append the new resume data to the DataFrame
                 resumes = resumes.append(preprocess_cv(text[i]), ignore_index=True)
             
@@ -145,6 +145,8 @@ with tab0: #NLP group project
 
 
             
+
+
 
 with tab1:
     with st.form(key ='Form_1'):
