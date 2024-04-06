@@ -124,18 +124,18 @@ with tab0: #NLP group project
 
             #Analyze resumes
 
-            #for i in range(len(text)):
-            #    st.write(preprocess_cv(text[i]))
+            for i in range(len(text)):
+                st.write(type(preprocess_cv(text[i])))
 
             
-            resumes=pd.DataFrame()
-            for i in range(len(text)):
-                if 'resumes' not in globals():
-                    resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
-                # Append the new resume data to the DataFrame
-                resumes = resumes.append(preprocess_cv(text[i]), ignore_index=True)
+            #resumes=pd.DataFrame()
+            #for i in range(len(text)):
+            #    if 'resumes' not in globals():
+            #        resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
+            #    # Append the new resume data to the DataFrame
+            #    resumes = resumes.append(preprocess_cv(text[i]), ignore_index=True)
 
-            st.write(resumes)
+            #st.write(resumes)
 
             #resumes['merged_info'] = resumes.apply(merge_columns, axis=1)
 
