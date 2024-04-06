@@ -21,40 +21,25 @@ Welcome to AI Interview Guru, your ultimate tool for streamlining the job applic
 
 The cosine similarity score measures the cosine of the angle between two vectors in a multidimensional space. In the context of AI Interview Guru, it quantifies the similarity between the embeddings of a resume and a job description. The formula for cosine similarity is as follows:
 
-Cosine Similarity= $ |A|*|B|/A⋅B $
+Cosine Similarity= $|A|*|B|/A⋅B$
 ​
- 
-
 Where:
+- A and B are the embedding vectors of the resume and job description, respectively.
+- |A| and |B| represent the magnitudes (or norms) of the vectors.
 
-�
-A and 
-�
-B are the embedding vectors of the resume and job description, respectively.
-⋅
-⋅ denotes the dot product of the two vectors.
-∥
-�
-∥
-∥A∥ and 
-∥
-�
-∥
-∥B∥ represent the magnitudes (or norms) of the vectors.
-Usage
+## Usage
 JobMatchRecruiter: Upload resumes and job descriptions to match candidates with suitable positions. Receive detailed scoring and insights to make informed hiring decisions.
-
-Read Me: Stay updated on the latest features and developments in the application. Learn how to use each feature effectively and find answers to frequently asked questions.
 
 ## Installation
 To run AI Interview Guru locally, follow these steps:
 
-Clone the repository to your local machine.
-Install the required dependencies using pip install -r requirements.txt.
-Set up your OpenAI API key as a secret variable in Streamlit.
-Run the application using streamlit run AI_interview_checker.py.
-Access the application through the provided URL.
-Contributing
+1. Clone the repository to your local machine.
+2. Install the required dependencies using pip install -r requirements.txt.
+3. Set up your OpenAI API key as a secret variable in Streamlit.
+4. Run the application using streamlit run AI_interview_checker.py.
+5. Access the application through the provided URL.
+
+## Contributing
 Contributions to AI Interview Guru are welcome! If you have suggestions for new features, improvements, or bug fixes, please submit a pull request or open an issue on GitHub.
 
 ## License
