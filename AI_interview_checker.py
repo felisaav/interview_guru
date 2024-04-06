@@ -149,11 +149,11 @@ with tab0: #NLP group project
             for i in range(len(text)):
                 # Append the new resume data to the DataFrame
                 new_row = preprocess_cv(text[i])
-                print("New Row:", new_row)  # Check the structure of new_row
-                resumes = resumes.append(new_row, ignore_index=True)
+                st.write("New Row:", new_row)  # Check the structure of new_row
+                #resumes = resumes.append(new_row, ignore_index=True)
             
             # Display the DataFrame after appending data
-            st.write(resumes)
+            #st.write(resumes)
 
             #for i in range(len(text)):
             #    # Append the new resume data to the DataFrame
