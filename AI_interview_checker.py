@@ -141,6 +141,7 @@ with tab0: #NLP group project
             resumes['score'] = resumes.apply(lambda row: similarity_score(row['embedding'], j_d), axis=1)
             
             # Display selected columns of the DataFrame sorted by 'score'
+            st.subtitle("Resume Scoring")
             st.write(resumes[['score', 'name', 'email', 'skills', 'experience', 'years_of_experience']].sort_values(by='score', ascending=False))
 
 
