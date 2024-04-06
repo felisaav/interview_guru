@@ -9,6 +9,7 @@ import numpy as np
 from openai import ChatCompletion
 client = ChatCompletion()
 
+
 import json
 
 # functions
