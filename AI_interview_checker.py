@@ -146,8 +146,8 @@ with tab0: #NLP group project
             # Analyze resumes
             resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])  # Initialize DataFrame
 
-            print(type(resumes))  # Check the type of resumes
-            print(resumes.head())  # Print the first few rows to inspect its structure
+            st.write(type(resumes))  # Check the type of resumes
+            st.write(resumes.head())  # Print the first few rows to inspect its structure
 
             #for i in range(len(text)):
             #    # Append the new resume data to the DataFrame
