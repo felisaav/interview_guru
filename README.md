@@ -43,4 +43,4 @@ To run AI Interview Guru locally, follow these steps:
 Contributions to AI Interview Guru are welcome! If you have suggestions for new features, improvements, or bug fixes, please submit a pull request or open an issue on GitHub.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
