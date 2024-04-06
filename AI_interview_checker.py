@@ -129,7 +129,7 @@ with tab0: #NLP group project
                 if 'resumes' not in globals():
                     resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
                 # Append the new resume data to the DataFrame
-                resumes = resumes.append(preprocess_cv(text[i]))#, ignore_index=True)
+                resumes = resumes.append(preprocess_cv(text[i]), ignore_index=True)
             
             # Apply the function to each row to create the new column
             resumes['merged_info'] = resumes.apply(merge_columns, axis=1)
