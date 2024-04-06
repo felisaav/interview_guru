@@ -144,10 +144,16 @@ with tab0: #NLP group project
             #st.write(resumes.sort_values(by='score', ascending=False))
             #------------------------
             # Analyze resumes
-            resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])  # Initialize DataFrame
-
-            st.write(type(resumes))  # Check the type of resumes
-            st.write(resumes.head())  # Print the first few rows to inspect its structure
+            resumes = pd.DataFrame(columns=["name", "email", "skills", "education", "experience", "years_of_experience"])
+            
+            for i in range(len(text)):
+                # Append the new resume data to the DataFrame
+                new_row = preprocess_cv(text[i])
+                print("New Row:", new_row)  # Check the structure of new_row
+                resumes = resumes.append(new_row, ignore_index=True)
+            
+            # Display the DataFrame after appending data
+            st.write(resumes)
 
             #for i in range(len(text)):
             #    # Append the new resume data to the DataFrame
