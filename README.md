@@ -4,17 +4,16 @@ Welcome to AI Interview Guru, your ultimate tool for streamlining the job applic
 ## Main Models
 1. ChatCompletion Model
    
-The ChatCompletion model, powered by OpenAI's GPT-3.5, is used extensively throughout AI Interview Guru to assist HR recruiters and job seekers in various tasks, including:
-
-- Preprocessing job descriptions and resumes.
-- Providing detailed analyses and feedback on resumes.
-- Matching candidates with suitable job positions based on skills, education, and experience.
-- Evaluating the quality of resumes and job descriptions.
-- Generating insights and suggestions for resume improvement.
+The ChatCompletion model, powered by OpenAI's GPT-3.5, is used throughout AI Interview Guru to assist HR recruiters and job seekers in **Preprocessing job descriptions and resumes**, **parsing resumes to extract relevant insights**
   
 2. Embedding Vector Model
-   
-The Embedding Vector model is utilized to generate embeddings for text data, enabling the comparison of resumes and job descriptions based on semantic similarity. This model calculates the cosine similarity score between two embeddings, allowing for accurate matching and scoring of resumes against job descriptions.
+
+This model is tailored for generating embeddings, which are numerical representations of textual data. Embeddings capture the semantic meaning of words, phrases, or entire documents in a high-dimensional vector space.
+
+- Model Name: text-embedding-3-small
+- Capabilities: It can process text inputs and convert them into fixed-length vectors, allowing for semantic analysis, similarity calculations, and other natural language processing tasks.
+- Output: The output of the model is a vector representation (embedding) of the input text, which encodes its semantic meaning in a numerical format.
+- Usage: The model is used in the code to generate embeddings of job descriptions and resumes, enabling comparison and analysis based on semantic similarity.
 
 ## Formulas and Explanation
 > Cosine Similarity Score
