@@ -17,7 +17,7 @@ Welcome to AI Interview Guru, your ultimate tool for streamlining the job applic
   The Embedding Vector model is utilized to generate embeddings for text data, enabling the comparison of resumes and job descriptions based on semantic similarity. This model calculates the cosine similarity score between two embeddings, allowing for accurate matching and scoring of resumes against job descriptions.
 
 ## Formulas and Explanation
-Cosine Similarity Score
+> Cosine Similarity Score
 The cosine similarity score measures the cosine of the angle between two vectors in a multidimensional space. In the context of AI Interview Guru, it quantifies the similarity between the embeddings of a resume and a job description. The formula for cosine similarity is as follows:
 
 Cosine Similarity
