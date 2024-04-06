@@ -4,7 +4,7 @@ Welcome to AI Interview Guru, your ultimate tool for streamlining the job applic
 ## Main Models
 1. ChatCompletion Model
    
-   The ChatCompletion model, powered by OpenAI's GPT-3.5, is used extensively throughout AI Interview Guru to assist HR recruiters and job seekers in various tasks, including:
+The ChatCompletion model, powered by OpenAI's GPT-3.5, is used extensively throughout AI Interview Guru to assist HR recruiters and job seekers in various tasks, including:
 
 - Preprocessing job descriptions and resumes.
 - Providing detailed analyses and feedback on resumes.
@@ -14,7 +14,7 @@ Welcome to AI Interview Guru, your ultimate tool for streamlining the job applic
   
 2. Embedding Vector Model
    
-  The Embedding Vector model is utilized to generate embeddings for text data, enabling the comparison of resumes and job descriptions based on semantic similarity. This model calculates the cosine similarity score between two embeddings, allowing for accurate matching and scoring of resumes against job descriptions.
+The Embedding Vector model is utilized to generate embeddings for text data, enabling the comparison of resumes and job descriptions based on semantic similarity. This model calculates the cosine similarity score between two embeddings, allowing for accurate matching and scoring of resumes against job descriptions.
 
 ## Formulas and Explanation
 > Cosine Similarity Score
@@ -22,7 +22,7 @@ Welcome to AI Interview Guru, your ultimate tool for streamlining the job applic
 The cosine similarity score measures the cosine of the angle between two vectors in a multidimensional space. In the context of AI Interview Guru, it quantifies the similarity between the embeddings of a resume and a job description. The formula for cosine similarity is as follows:
 
 Cosine Similarity= $|A|*|B|/A⋅B$
-​
+
 Where:
 - A and B are the embedding vectors of the resume and job description, respectively.
 - |A| and |B| represent the magnitudes (or norms) of the vectors.
