@@ -81,6 +81,7 @@ def similarity_score(embedding_1,embedding_2):
     cosine_similarity = a / (norm_1 * norm_2)
     return cosine_similarity
 
+#other functions
 def merge_columns(row):
     # Convert elements to strings before joining
     skills_str = ', '.join(map(str, row['skills']))
@@ -91,6 +92,7 @@ def merge_columns(row):
     # Concatenate the strings with appropriate separators
     merged_info = skills_str + '; ' + education_str + '; ' + experience_str + '; ' + years_of_experience_str
     return merged_info
+    
 #-----------------------------------------------------------
 # Title section
 
@@ -99,15 +101,11 @@ with left_column:
     st.title('AI interview Guru')
 with right_column:
     st_lottie("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json", height=150)
-    
-
-
-#st.title('AI interview Guru')
 #-----------------------------------------------------------
 
 tab0, tab1 = st.tabs(["JobMatchRecruiter", "Read Me"])
 
-with tab0: #NLP group project
+with tab0: #NLP main page
     with st.form(key ='Form_0'):
         uploaded_resume = st.file_uploader("Load resumes (in pdf format): ", type=['pdf'],accept_multiple_files=True)
         uploaded_job_description = st.file_uploader("Load Job Description (in pdf format): ", type=['pdf'])
@@ -162,7 +160,7 @@ with tab0: #NLP group project
             st.title("Resume Scoring")
             st.write(resumes[['score', 'name', 'email', 'skills', 'experience', 'years_of_experience']].sort_values(by='score', ascending=False))
 
-    with tab1:
+    with tab1: #ReadMe
         st.write("Welcome to AI Interview Guru, your ultimate tool for streamlining the job application process and enhancing interview preparation using cutting-edge artificial intelligence technologies.")
 
         st.header("Main Models")
