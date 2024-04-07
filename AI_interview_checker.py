@@ -172,7 +172,7 @@ with tab0: #NLP group project
         st.subheader("Embedding Vector Model")
         st.write("This model, text-embedding-3-small, is tailored for **generating embeddings**, which are **numerical representations of textual data**. Embeddings capture the semantic meaning of words, phrases, or entire documents in a high-dimensional vector space.")
 
-        st.subheader("Scoring Explanation")
+        st.header("Scoring Explanation")
         st.markdown("Cosine Similarity Score")
         st.write("The cosine similarity score measures the cosine of the angle between two vectors in a multidimensional space. In the context of AI Interview Guru, it quantifies the similarity between the embeddings of a resume and a job description. The formula for cosine similarity is as follows:")
 
@@ -186,6 +186,6 @@ with tab0: #NLP group project
                 - |A| and |B| represent the magnitudes (or norms) of the vectors.
                 ''')
         
-        st.subheader("Usage")
+        st.header("Usage")
         st.write("JobMatchRecruiter: Upload resumes and job descriptions to match candidates with suitable positions. Receive detailed scoring and insights to make informed hiring decisions.")
 
