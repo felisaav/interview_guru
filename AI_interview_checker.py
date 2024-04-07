@@ -98,11 +98,7 @@ left_column, right_column = st.columns(2)
 with left_column:
     st.title('AI interview Guru')
 with right_column:
-    #with st.echo():
-    st_lottie("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json", height=100)
-    #lottie_coding=load_lottieurl("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json")
-#with right_column:
-#	st_lottie(lottie_coding, height=300, key="coding")
+    st_lottie("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json", height=150)
     
 
 
