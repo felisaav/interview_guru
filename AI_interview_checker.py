@@ -153,9 +153,9 @@ with tab0: #NLP group project
 
     with tab1:
 
-        st.markdown("AI Interview Guru")
-        st.text("Welcome to AI Interview Guru, your ultimate tool for streamlining the job application process and enhancing interview preparation using cutting-edge artificial intelligence technologies.")
+        st.title("AI Interview Guru")
+        st.write("Welcome to AI Interview Guru, your ultimate tool for streamlining the job application process and enhancing interview preparation using cutting-edge artificial intelligence technologies.")
 
-        st.markdown("Main Models")
+        st.header("Main Models")
         st.subheader("ChatCompletion Model")
-        st.text("The ChatCompletion model, powered by OpenAI's GPT-3.5, is used throughout AI Interview Guru to assist HR recruiters and job seekers in **Preprocessing job descriptions and resumes**, **parsing resumes to extract relevant insights**")
+        st.write("The ChatCompletion model, powered by OpenAI's GPT-3.5, is used throughout AI Interview Guru to assist HR recruiters and job seekers in **Preprocessing job descriptions and resumes**, **parsing resumes to extract relevant insights**")
