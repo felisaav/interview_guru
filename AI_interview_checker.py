@@ -94,9 +94,10 @@ def merge_columns(row):
     return merged_info
 #-----------------------------------------------------------
 # Page configuration
+
 st.set_page_config(
     page_title="AI interview Guru",
-    page_icon="bot",
+    page_icon="robot",
     layout="wide",
 )
 #-----------------------------------------------------------
