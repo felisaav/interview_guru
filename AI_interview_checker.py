@@ -4,7 +4,7 @@ import openai
 import os
 import fitz  # PyMuPDF
 import numpy as np
-import requests as rq
+#import requests as rq
 from streamlit_lottie import st_lottie
 from openai import ChatCompletion
 client = ChatCompletion()
@@ -98,9 +98,11 @@ left_column, right_column = st.columns(2)
 with left_column:
     st.title('AI interview Guru')
 with right_column:
-    lottie_coding=load_lottieurl("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json")
-with right_column:
-	st_lottie(lottie_coding, height=300, key="coding")
+    with st.echo():
+    	st_lottie("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json")
+    #lottie_coding=load_lottieurl("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json")
+#with right_column:
+#	st_lottie(lottie_coding, height=300, key="coding")
     
 
 
