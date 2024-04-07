@@ -92,7 +92,13 @@ def merge_columns(row):
     # Concatenate the strings with appropriate separators
     merged_info = skills_str + '; ' + education_str + '; ' + experience_str + '; ' + years_of_experience_str
     return merged_info
-    
+#-----------------------------------------------------------
+# Page configuration
+st.set_page_config(
+    page_title="AI interview Guru",
+    page_icon="bot",
+    layout="wide",
+)
 #-----------------------------------------------------------
 # Title section
 
