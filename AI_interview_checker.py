@@ -152,7 +152,10 @@ with tab0: #NLP group project
             st.write(resumes[['score', 'name', 'email', 'skills', 'experience', 'years_of_experience']].sort_values(by='score', ascending=False))
 
     with tab1:
-        st.write("""**Exciting updates in progress!** We're hard at work developing a new feature to enhance your interview preparation experience. While we're 
-                    still working on it, stay tuned for an even more valuable resource to help you ace your interviews. We appreciate your patience and look
-                    forward to bringing you the best interview preparation tools""")
 
+        st.markdown("AI Interview Guru")
+        st.text(Welcome to AI Interview Guru, your ultimate tool for streamlining the job application process and enhancing interview preparation using cutting-edge artificial intelligence technologies.")
+
+        st.markdown("Main Models")
+        st.subheader("ChatCompletion Model")
+        st.text("The ChatCompletion model, powered by OpenAI's GPT-3.5, is used throughout AI Interview Guru to assist HR recruiters and job seekers in **Preprocessing job descriptions and resumes**, **parsing resumes to extract relevant insights**")
