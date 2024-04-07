@@ -8,17 +8,14 @@ The ChatCompletion model, powered by OpenAI's GPT-3.5, is used throughout AI Int
   
 2. Embedding Vector Model
 
-This model, text-embedding-3-small, is tailored for generating embeddings, which are **numerical representations of textual data**. Embeddings capture the semantic meaning of words, phrases, or entire documents in a high-dimensional vector space.
+This model, text-embedding-3-small, is tailored for **generating embeddings**, which are **numerical representations of textual data**. Embeddings capture the semantic meaning of words, phrases, or entire documents in a high-dimensional vector space.
 
-## Formulas and Explanation
+## Scoring Explanation
 > Cosine Similarity Score
 
 The cosine similarity score measures the cosine of the angle between two vectors in a multidimensional space. In the context of AI Interview Guru, it quantifies the similarity between the embeddings of a resume and a job description. The formula for cosine similarity is as follows:
 
-|A| * |B|
--------- =
-   A * B
-
+![\frac{\left|A\right|*\left|B\right|}{A*B}](https://latex.codecogs.com/svg.latex?\frac{\left|A\right|*\left|B\right|}{A*B}) 
 
 Where:
 - A and B are the embedding vectors of the resume and job description, respectively.
@@ -26,6 +23,8 @@ Where:
 
 ## Usage
 JobMatchRecruiter: Upload resumes and job descriptions to match candidates with suitable positions. Receive detailed scoring and insights to make informed hiring decisions.
+
+The app is ready to use in the following [Link](https://interviewguru-2rmim7ur3egmifdwdry9kj.streamlit.app/)
 
 ## Installation
 To run AI Interview Guru locally, follow these steps:
@@ -37,6 +36,7 @@ To run AI Interview Guru locally, follow these steps:
 5. Access the application through the provided URL.
 
 ## Contributing
+This project was part of NLP course in ie University, Master of Business Analytics and Big Data program. This project was developed by @
 Contributions to AI Interview Guru are welcome! If you have suggestions for new features, improvements, or bug fixes, please submit a pull request or open an issue on GitHub.
 
 ## License
