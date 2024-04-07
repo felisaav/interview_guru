@@ -8,19 +8,16 @@ The ChatCompletion model, powered by OpenAI's GPT-3.5, is used throughout AI Int
   
 2. Embedding Vector Model
 
-This model is tailored for generating embeddings, which are numerical representations of textual data. Embeddings capture the semantic meaning of words, phrases, or entire documents in a high-dimensional vector space.
-
-- Model Name: text-embedding-3-small
-- Capabilities: It can process text inputs and convert them into fixed-length vectors, allowing for semantic analysis, similarity calculations, and other natural language processing tasks.
-- Output: The output of the model is a vector representation (embedding) of the input text, which encodes its semantic meaning in a numerical format.
-- Usage: The model is used in the code to generate embeddings of job descriptions and resumes, enabling comparison and analysis based on semantic similarity.
+This model, text-embedding-3-small, is tailored for generating embeddings, which are **numerical representations of textual data**. Embeddings capture the semantic meaning of words, phrases, or entire documents in a high-dimensional vector space.
 
 ## Formulas and Explanation
 > Cosine Similarity Score
 
 The cosine similarity score measures the cosine of the angle between two vectors in a multidimensional space. In the context of AI Interview Guru, it quantifies the similarity between the embeddings of a resume and a job description. The formula for cosine similarity is as follows:
 
-Cosine Similarity= $|A|*|B|/A⋅B$
+\[
+\frac{{|A| \cdot |B|}}{{A \cdot B}}
+\]
 
 Where:
 - A and B are the embedding vectors of the resume and job description, respectively.
