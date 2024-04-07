@@ -4,8 +4,8 @@ import openai
 import os
 import fitz  # PyMuPDF
 import numpy as np
-#import requests as rq
-#from streamlit_lottie import st_lottie
+import requests as rq
+from streamlit_lottie import st_lottie
 from openai import ChatCompletion
 client = ChatCompletion()
 
@@ -92,8 +92,21 @@ def merge_columns(row):
     merged_info = skills_str + '; ' + education_str + '; ' + experience_str + '; ' + years_of_experience_str
     return merged_info
 #-----------------------------------------------------------
+# Title section
 
-st.title('AI interview Guru')
+left_column, right_column = st.columns(2)
+with left_column:
+    st.title('AI interview Guru')
+with right_column:
+    lottie_coding=load_lottieurl("https://lottie.host/0d33f259-f4ca-4fca-bbdf-6d9796af6cf5/iG5NDmi7WE.json")
+with right_column:
+	st_lottie(lottie_coding, height=300, key="coding")
+    
+
+
+#st.title('AI interview Guru')
+#-----------------------------------------------------------
+
 tab0, tab1 = st.tabs(["JobMatchRecruiter", "Read Me"])
 
 with tab0: #NLP group project
